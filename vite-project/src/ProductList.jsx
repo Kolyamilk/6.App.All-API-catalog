@@ -13,7 +13,7 @@ const ProductList = () => {
     useEffect(() => {
         axios.get(URL)
             .then(response => {
-                console.log(response.data.entries);
+
                 setProducts(response.data.entries)
                 setFilteredProducts(response.data.entries)
             })
@@ -36,21 +36,16 @@ const ProductList = () => {
 
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
-
-
-
     const handlePrevPage = () => {
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);
         }
     };
-
     const handleNextPage = () => {
         if (indexOfLastProduct < filteredProducts.length) {
             setCurrentPage(currentPage + 1);
         }
     };
-
     return (
         <div>
             <h1>Список товаров</h1>
@@ -58,20 +53,22 @@ const ProductList = () => {
                 value={filter} onChange={handleFilterChange}
             />
             <table className="table">
-                <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Category</th>
-                    <th>URL</th>
-                </tr>
-                {currentProducts.map((product, key) => (
-                    <tr key={key}>
-                        <td>{product.API}</td>
-                        <td>{product.Description}</td>
-                        <td>{product.Category}</td>
-                        <td>{product.Link}</td>
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>URL</th>
                     </tr>
-                ))}
+                    {currentProducts.map((product, key) => (
+                        <tr key={key}>
+                            <td>{product.API}</td>
+                            <td>{product.Description}</td>
+                            <td>{product.Category}</td>
+                            <td>{product.Link}</td>
+                        </tr>
+                    ))}
+                </tbody>
             </table>
             {/* <ul>
                 {currentProducts.map((product, key) => (
@@ -80,10 +77,9 @@ const ProductList = () => {
                     </li>
                 ))}
             </ul> */}
-
             <div className="pagination">
                 <button onClick={handlePrevPage}>{'<'}</button>
-                {/* <button onClick={() => paginate(currentPage - 2)}>{currentPage - 2}</button> */}
+                <button onClick={() => paginate(currentPage - 2)}>{currentPage - 2}</button>
                 <button onClick={() => paginate(currentPage === 1 ? null : currentPage - 1)}>{currentPage - 1}</button>
                 <button className="active">{currentPage}</button>
                 <button onClick={() => paginate(currentPage + 1)}>{currentPage + 1}</button>
@@ -93,7 +89,6 @@ const ProductList = () => {
                 ))} */}
                 <button onClick={handleNextPage}>{'>'}</button>
             </div>
-
         </div>
     )
 }

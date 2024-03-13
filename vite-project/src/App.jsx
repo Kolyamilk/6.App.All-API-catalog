@@ -3,12 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ProductList from './ProductList'
+import RandomCatsTheme from './RandomCatsTheme'
+import GetIPAdress from './GetIPAdress'
 function App() {
   const [count, setCount] = useState(0)
-
   return (
     <>
       <ProductList />
+      <RandomCatsTheme />
+      <GetIPAdress />
     </>
   )
 }
