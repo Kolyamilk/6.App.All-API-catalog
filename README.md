@@ -2,8 +2,8 @@
 ### Показывает таблицу всех API: Название, Описание, Категорию и ссылка URL
 ### Максимум на странице 10 товаров
 ### Возможность переходом по страницам
-## Generate random Dog image
+# Generate random Dog image
 ### показывает случайное фото собак
-## Show your IP adress
+# Show your IP adress
 ### показывает ваш IP
 
