@@ -7,4 +7,4 @@
 # Show your IP adress
 ### показывает ваш IP
 
-![Иллюстрация к проекту](https://github.com/Kolyamilk/6.App.All-API-catalog/blob/main/vite-project/333.gif)
+![Иллюстрация к проекту](https://github.com/Kolyamilk/6.App.All-API-catalog/blob/main/333.gif)
